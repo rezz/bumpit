@@ -1,0 +1,51 @@
+ .votecard {
+	background: url(../images/sprite.png) no-repeat 0 0;
+	padding: 4px;
+	width: 63px;
+	height: 43px;
+	text-align: center;
+}
+
+.votecard div {
+	position: relative;
+	overflow: hidden;
+	width: 63px;
+	height: 43px;
+}
+
+.votecard em {
+	display: block;
+	position: relative;
+	width: 63px;
+	height: 33px;
+	padding: 6px 0 6px 0;
+	font: normal 24px/24px "Helvetica Neue","Helvetica","Arial",Sans-serif;
+	color: #45453f;
+}
+.votecard strong {
+	font-weight: bold;
+}
+.votecard span {
+	font-size: 10px;
+	line-height: 10px;
+	display: block;
+	color: #9a9a94;
+}
+a.voteaction {
+	margin: 0 0 0 3px;
+	display: block;
+	text-indent: -9999px;
+	width: 71px;
+	height: 21px;
+	background: url(../images/sprite.png) no-repeat -3px -75px;
+}
+a.voteaction:hover {
+	outline: none;
+	background-position: -3px -54px;
+}
+a.voted,
+a.voted:hover {
+	outline: none;
+	background-position: -3px -96px;
+	cursor: default;
+}

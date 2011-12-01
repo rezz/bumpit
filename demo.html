@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Vote Flipper Demo - A push effect using jQuery for social voting tools</title>
+	<meta name="generator" content="TextMate http://macromates.com/">
+	<meta name="author" content="Aaron Weyenberg">
+	<link rel="stylesheet" type="text/css" href="css/voteflip.css" />
+	<!-- Date: 2010-02-03 -->
+	
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	/* create a node for the flip-to number */
+	$(".votecard em").clone().appendTo(".votecard div");
+	/* increment that by 1 */
+	var node = $(".votecard em:last strong")
+	node.text(parseInt(node.text())+1);
+	
+	
+	function flip(obj) {
+		obj.prev().find("em").animate({
+			top: '-=45'
+		}, 200);
+		obj.toggleClass("voted",true);
+	}
+	
+	$('.voteaction').bind({
+	  click: function(event) {
+	    event.preventDefault()
+	  },
+	  mouseup: function() {
+	    flip($(this));
+		$(this).unbind('mouseup');
+	  }
+	});
+	
+});
+</script>
+	
+
+	
+</head>
+<body>
+
+	<div class="votecard">
+		<div>
+			<em><strong>293</strong><span>Bumps</span></em>
+		</div>
+	</div>
+	<a class="voteaction" href="">Bumpit</a>
+	
+	<script type="text/javascript">
+	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	<script type="text/javascript">
+	try {
+	var pageTracker = _gat._getTracker("UA-8108740-1");
+	pageTracker._trackPageview();
+	} catch(err) {}</script>
+	
+	
+</body>
+</html>
